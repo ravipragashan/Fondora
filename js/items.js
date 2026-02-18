@@ -6,9 +6,11 @@ import { collection, addDoc, getDocs } from
 const table = document.getElementById("itemTable");
 
 window.addItem = async function(){
-  const name = itemName.value;
-  const price = priceInput.value;
-  await addDoc(collection(db,"items"),{name,price});
+  const name = document.getElementById("itemName").value;
+  const rate = document.getElementById("rate").value;
+  const tax = document.getElementById("tax").value;
+
+  await addDoc(collection(db,"items"),{name,rate,tax});
   loadItems();
 }
 
@@ -17,9 +19,10 @@ async function loadItems(){
   const snap = await getDocs(collection(db,"items"));
   snap.forEach(doc=>{
     const d = doc.data();
-    table.innerHTML += `<tr class="border-t fade-in">
-      <td class="p-4">${d.name}</td>
-      <td class="p-4">${d.price}</td>
+    table.innerHTML += `<tr>
+      <td class="p-3">${d.name}</td>
+      <td class="p-3">${d.rate}</td>
+      <td class="p-3">${d.tax}%</td>
     </tr>`;
   });
 }
