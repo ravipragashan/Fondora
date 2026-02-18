@@ -5,31 +5,25 @@
 <meta charset="UTF-8">
 <title>Items</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/core.css">
 </head>
-<body class="bg-gray-100">
-
-<div class="flex h-screen">
-<aside class="w-64 bg-white shadow-lg p-6">
-<h1 class="text-2xl font-bold text-blue-600 mb-8">Fandora</h1>
-<nav class="space-y-4">
-<a href="index.html" class="sidebar-link block">Dashboard</a>
-<a href="suppliers.html" class="sidebar-link block">Suppliers</a>
-<a href="items.html" class="sidebar-link block">Items</a>
-<a href="purchase-orders.html" class="sidebar-link block">Purchase Orders</a>
-</nav>
-</aside>
-<main class="flex-1 p-8">
-<h2 class="text-3xl font-semibold mb-6">Items</h2>
-<div class="bg-white p-6 rounded-xl shadow mb-6">
-<input id="itemName" placeholder="Item Name" class="border p-2 mr-2">
-<input id="priceInput" placeholder="Price" class="border p-2 mr-2">
-<button onclick="addItem()" class="bg-blue-600 text-white px-4 py-2 rounded">Add</button>
+<body class="bg-gray-100 flex">
+<div class="sidebar p-4">
+<h1 class="text-2xl font-bold mb-6">Fandora</h1>
+<a href="index.html">Dashboard</a>
+<a href="sales-order.html">Sales Order</a>
+<a href="suppliers.html">Suppliers</a>
+<a href="items.html">Items</a>
+<a href="settings.html">Settings</a>
 </div>
-<table class="min-w-full bg-white rounded-xl shadow">
-<tbody id="itemTable"></tbody>
-</table>
-</main>
+<div class="flex-1 p-8">
+<div class="card mb-4">
+<input id="itemName" placeholder="Item" class="border p-2">
+<input id="rate" placeholder="Rate" class="border p-2">
+<input id="tax" placeholder="Tax %" class="border p-2">
+<button onclick="addItem()" class="bg-blue-600 text-white px-4 py-2">Add</button>
+</div>
+<table id="itemTable" class="card"></table>
 </div>
 <script type="module" src="js/items.js"></script>
 </body>

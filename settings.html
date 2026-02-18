@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Suppliers</title>
+<title>Settings</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/core.css">
 </head>
@@ -17,14 +17,11 @@
 <a href="settings.html">Settings</a>
 </div>
 <div class="flex-1 p-8">
-<div class="card mb-4">
-<input id="name" placeholder="Name" class="border p-2">
-<input id="phone" placeholder="Phone" class="border p-2">
-<input id="email" placeholder="Email" class="border p-2">
-<button onclick="addSupplier()" class="bg-blue-600 text-white px-4 py-2">Add</button>
+<div class="card">
+<label><input type="checkbox" onchange="toggleAutoNumber(this.checked)"> Auto SO Number</label>
+<button onclick="saveSettings()" class="bg-blue-600 text-white px-4 py-2">Save</button>
 </div>
-<table id="supplierTable" class="card"></table>
 </div>
-<script type="module" src="js/suppliers.js"></script>
+<script type="module" src="js/settings.js"></script>
 </body>
 </html>
