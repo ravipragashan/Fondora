@@ -2,20 +2,49 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PO Dashboard</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Fandora Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-<div class="sidebar">
-<h2>PO System</h2>
-<a href="index.html">Dashboard</a>
-<a href="suppliers.html">Suppliers</a>
-<a href="items.html">Items</a>
-<a href="purchase-orders.html">Purchase Orders</a>
+<body class="bg-gray-100 font-sans">
+
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-lg p-5">
+    <h1 class="text-2xl font-bold text-blue-600 mb-8">Fandora</h1>
+    <nav class="space-y-4">
+      <a href="index.html" class="block text-gray-700 hover:text-blue-600">Dashboard</a>
+      <a href="suppliers.html" class="block text-gray-700 hover:text-blue-600">Suppliers</a>
+      <a href="items.html" class="block text-gray-700 hover:text-blue-600">Items</a>
+      <a href="purchase-orders.html" class="block text-gray-700 hover:text-blue-600">Purchase Orders</a>
+    </nav>
+  </aside>
+
+  <!-- Content -->
+  <main class="flex-1 p-8 overflow-y-auto">
+    <h2 class="text-3xl font-semibold mb-6">Dashboard</h2>
+
+    <div class="grid grid-cols-4 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-gray-500">Total Orders</h3>
+        <p class="text-3xl font-bold mt-2">0</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-gray-500">Open</h3>
+        <p class="text-3xl font-bold text-yellow-500 mt-2">0</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-gray-500">Partial</h3>
+        <p class="text-3xl font-bold text-blue-500 mt-2">0</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-gray-500">Closed</h3>
+        <p class="text-3xl font-bold text-green-500 mt-2">0</p>
+      </div>
+    </div>
+  </main>
 </div>
-<div class="content">
-<h1>Dashboard</h1>
-<div class="card">System Ready ✅</div>
-</div>
+
+<script>lucide.createIcons();</script>
 </body>
 </html>
